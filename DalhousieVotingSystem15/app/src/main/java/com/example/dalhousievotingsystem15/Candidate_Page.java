@@ -14,7 +14,19 @@ public class Candidate_Page extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.Candidate_Page);
+    TextView candidate = (TextView) findViewById(R.id.welcomecandidate);
+    TextView candidateName = (TextView) findViewById(R.id.candidateName);
+    TextView candidateInformation =(TextView) findViewById(R.id.candidateInformation);
+    EditText candidateNameEdit = (EditText) findViewById(R.id.candidateNameEdit);
+    EditText candidateInformationEdit = (EditText) findViewById(R.id.candidateInformationEdit);
+    if(studentCheck){
+      candidateNameEdit.setVisibility(TextView.INVISIBLE);
+      candidateInformationEdit.setVisibility(TextView.INVISIBLE);
+    }else if(candidateCheck){
+      candidateNameEdit.setVisibility(TextView.VISIBLE);
+      candidateInformationEdit.setVisibility(TextView.VISIBLE);
+    }
 
     Button edit=(Button)findViewById(R.id.button);
     edit.setOnClickListener(new View.OnClickListener(){
@@ -24,22 +36,9 @@ public class Candidate_Page extends AppCompatActivity {
         TextView candidateInformation =(TextView) findViewById(R.id.candidateInformation);
         EditText candidateNameEdit = (EditText) findViewById(R.id.candidateNameEdit);
         EditText candidateInformationEdit = (EditText) findViewById(R.id.candidateInformationEdit);
-        if(studentCheck){
-          candidateNameEdit.setVisibility(TextView.INVISIBLE);
-          candidateInformationEdit.setVisibility(TextView.INVISIBLE);
-        }else if(candidateCheck){
-          candidateNameEdit.setVisibility(TextView.VISIBLE);
-          candidateInformationEdit.setVisibility(TextView.VISIBLE);
-        }
         candidateName.setText(candidateNameEdit.getText());
         candidateInformation.setText(candidateInformationEdit.getText());
       }
     });
-  }
-  public void setStudent(boolean f){
-    this.studentCheck=f;
-  }
-  public void setCandidate(boolean f){
-    this.candidateCheck=f;
   }
 }

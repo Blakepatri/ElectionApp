@@ -11,15 +11,14 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
-    }
-    @Test
-    public void candidate_pagetest(){
+    public void candidate_pagetestAsstudent(){
         Candidate_Page c1 =new Candidate_Page;
         c1.setStudent(true);
         c1.setCandidate(false);
-        Candidate_Page c2 =new Candidate_Page;
+
+    }
+    public void candidate_pagetestAscandidate(){
+        Candidate_Page c1 =new Candidate_Page;
         c1.setStudent(false);
         c1.setCandidate(true);
     }
