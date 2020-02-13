@@ -75,7 +75,7 @@ public class Administer_StudentControl extends AppCompatActivity {
 
     private boolean IsNetIDExist(final String netID){
 
-        MainActivity.studentRef.addValueEventListener(new ValueEventListener() {
+        /*MainActivity.studentRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 status=(TextView) findViewById(R.id.Status);
@@ -99,7 +99,8 @@ public class Administer_StudentControl extends AppCompatActivity {
             return true;
         }else {
             return false;
-        }
+        }*/
+        return false;
 
     }
 }

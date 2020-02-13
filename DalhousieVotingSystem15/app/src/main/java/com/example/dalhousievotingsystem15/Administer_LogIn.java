@@ -30,7 +30,7 @@ public class Administer_LogIn extends AppCompatActivity {
         studentControl=(Button)findViewById(R.id.StudentControl);
 
 
-       /* MainActivity.admRef.addValueEventListener(new ValueEventListener() {
+        MainActivity.admRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 welcomeText=(TextView)findViewById(R.id.Welcome);
@@ -43,7 +43,7 @@ public class Administer_LogIn extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });*/
+        });
 
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
