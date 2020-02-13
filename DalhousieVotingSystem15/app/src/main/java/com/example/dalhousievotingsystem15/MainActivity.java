@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
                 status.setText(text);
                 if(text!=null) {
                     if (text.equals(password)) {
-                        startActivity(new Intent(MainActivity.this, Student_Login.class));
+                        startActivity(new Intent(MainActivity.this, Candidate_Login.class));
                         SaveUserIf("c",netid, password);
                     } else {
                         status.setText("Incorrect Password");
