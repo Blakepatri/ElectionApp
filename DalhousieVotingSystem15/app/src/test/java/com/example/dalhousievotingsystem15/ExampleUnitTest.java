@@ -10,16 +10,17 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    @Test
-    public void candidate_pagetestAsstudent(){
-        Candidate_Page c1 =new Candidate_Page;
-        c1.setStudent(true);
-        c1.setCandidate(false);
+     @Test
+    public void IDTest(){
+        Validator v1 = new Validator("","AABBCCDDEE");
+        Validator v2 = new Validator("123","ABCDEFG");
+        Validator v3 = new Validator("","2333333");
 
-    }
-    public void candidate_pagetestAscandidate(){
-        Candidate_Page c1 =new Candidate_Page;
-        c1.setStudent(false);
-        c1.setCandidate(true);
+
+
+        assertFalse(v1.IDNotEmpty());
+        assertTrue(v2.IDNotEmpty());
+        assertFalse(v3.IDNotEmpty());
+
     }
 }
