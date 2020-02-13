@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".Student_Login">
 
+    <Button
+        android:id="@+id/vote"
+        android:layout_width="97dp"
+        android:layout_height="46dp"
+        android:text="  Vote  "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LogOut"
+        app:layout_constraintVertical_bias="0.27" />
+
     <TextView
         android:id="@+id/Info"
         android:layout_width="211dp"
