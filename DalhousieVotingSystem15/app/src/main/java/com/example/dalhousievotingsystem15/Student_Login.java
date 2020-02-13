@@ -16,11 +16,13 @@ import com.google.firebase.database.ValueEventListener;
 public class Student_Login extends AppCompatActivity {
     private TextView infoView;
     private Button logOut;
+    private Button temp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_login);
         logOut=(Button)findViewById(R.id.LogOut);
+        temp=(Button)findViewById(R.id.vote);
 
 
 
@@ -48,6 +50,12 @@ public class Student_Login extends AppCompatActivity {
             public void onClick(View v) {
                 MainActivity.logout=true;
                 startActivity(new Intent(Student_Login.this, MainActivity.class));
+            }
+        });
+        temp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Student_Login.this, temp.class));
             }
         });
     }
