@@ -43,6 +43,8 @@ public class Candidate_Login extends AppCompatActivity {
 
 
 
+
+
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
