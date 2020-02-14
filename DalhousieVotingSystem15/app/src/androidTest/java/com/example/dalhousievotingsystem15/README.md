@@ -1,35 +1,8 @@
-# Group 15 CSCI3130
+# Expresso Test
 
-Now we have login function and Update policy function that can fully connect to firebase.
-We also have the vote and cancel vote function, click the vote button again you will cancel your vote.
+When expresso test fail, please do the following to slove it:
 
-This system is a voting system so it does not allow user sign up, all user account is handled by Admin.
-Therefore, we will provide you the user account that we have created:
+1:Try clean project and then run the expresso test again.
 
-(Currently we only have simple pwd for quicker test, run the UI test will take a lots of time
-we have pwd validation but not implemented yet.)
-
-Admin account:
-
-    ID: Administer
-    PWD: gp01
-    
-Candidates account:
-
-    ID: lliu
-    PWD: 21w21w
-    
-    ID: trump
-    PWD: MakeUSGreatAgain
-
-Students account:
-
-    ID: ljia
-    PWD: ps4saigao
-    
-    ID: Bob
-    PWD: i9i9
-    
-    ID: xjiang
-    PWD: 1w1w
+2:If still not working, please uninstall the app on the emulator and directly run the test on the Android Sutdio again.
     
