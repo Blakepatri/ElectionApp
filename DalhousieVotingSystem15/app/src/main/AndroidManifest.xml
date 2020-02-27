@@ -13,6 +13,7 @@
         <activity android:name=".Student_Login" />
         <activity android:name=".Administer_StudentControl" />
         <activity android:name=".Administer_LogIn" />
+        <activity android:name=".temp" />
         <activity
             android:name=".StudentLogIn"
             android:label="@string/title_activity_student_log_in"
