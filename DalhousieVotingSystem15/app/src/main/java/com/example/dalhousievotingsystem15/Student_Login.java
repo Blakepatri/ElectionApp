@@ -17,13 +17,19 @@ public class Student_Login extends AppCompatActivity {
     private TextView infoView;
     private Button logOut;
     private Button temp;
+    notification nt = new notification();
+    boolean pop=nt.getPopup();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_login);
         logOut=(Button)findViewById(R.id.LogOut);
         temp=(Button)findViewById(R.id.vote);
+        Snackbar mySnackbar = Snackbar.make(view, stringId, duration);
+        if(pop){
 
+        }
 
 
 
@@ -59,4 +65,5 @@ public class Student_Login extends AppCompatActivity {
             }
         });
     }
+
 }
