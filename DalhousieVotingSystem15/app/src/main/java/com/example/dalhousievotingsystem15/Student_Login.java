@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -26,9 +27,10 @@ public class Student_Login extends AppCompatActivity {
         setContentView(R.layout.activity_student_login);
         logOut=(Button)findViewById(R.id.LogOut);
         temp=(Button)findViewById(R.id.vote);
-        Snackbar mySnackbar = Snackbar.make(view, stringId, duration);
+        String message = "Election Has Ended";
+        Snackbar mySnackbar = Snackbar.make(findViewById(R.id.myLayout), R.string.message, Snackbar.LENGTH_LONG);
         if(pop){
-
+            mySnackbar.show();
         }
 
 
@@ -40,6 +42,10 @@ public class Student_Login extends AppCompatActivity {
                 String netid=MainActivity.user.netID;
                 String name=dataSnapshot.child(netid).child("Name").getValue(String.class);
                 infoView.setText("Hello  "+name+"\n"+"Your NetID is: "+netid);
+                Snackbar mySnackbar = Snackbar.make(findViewById(R.id.myLayout), R.string.message, Snackbar.LENGTH_LONG);
+                if(pop){
+                    mySnackbar.show();
+                }
 
             }
 
