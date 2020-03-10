@@ -28,7 +28,7 @@ public class Student_Login extends AppCompatActivity {
         logOut=(Button)findViewById(R.id.LogOut);
         temp=(Button)findViewById(R.id.vote);
         String message = "Election Has Ended";
-        Snackbar mySnackbar = Snackbar.make(findViewById(R.id.myLayout), R.string.message, Snackbar.LENGTH_LONG);
+        Snackbar mySnackbar = Snackbar.make(findViewById(R.id.myLayout), message, Snackbar.LENGTH_LONG);
         if(pop){
             mySnackbar.show();
         }

@@ -26,6 +26,7 @@ public class Administer_LogIn extends AppCompatActivity {
 
         welcomeText=(TextView)findViewById(R.id.Welcome);
         logOut=(Button)findViewById(R.id.LogOut);
+        studentControl=(Button)findViewById(R.id.StudentControl);
 
 
         MainActivity.admRef.addValueEventListener(new ValueEventListener() {
@@ -48,6 +49,13 @@ public class Administer_LogIn extends AppCompatActivity {
             public void onClick(View v) {
                 MainActivity.logout=true;
                 startActivity(new Intent(Administer_LogIn.this, MainActivity.class));
+            }
+        });
+
+        studentControl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Administer_LogIn.this, Administer_StudentControl.class));
             }
         });
 
