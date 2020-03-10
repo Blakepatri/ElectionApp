@@ -54,9 +54,9 @@ public class VoteTest {
 
         onView(withId(R.id.logIn)).perform(click());
 
-        onView(withId(R.id.CID)).perform(replaceText("trump"));
+        onView(withId(R.id.vote)).perform(click());
 
-        onView(withId(R.id.VOTE)).perform(click());
+        onView(withId(R.id.b1)).perform(click());
 
     }
 }

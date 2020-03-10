@@ -45,13 +45,13 @@ public class ChangeVoteTest {
 
         onView(withId(R.id.logIn)).perform(click());
 
-        onView(withId(R.id.CID)).perform(replaceText("trump"));
+        onView(withId(R.id.vote)).perform(click());
 
-        onView(withId(R.id.VOTE)).perform(click());
+        onView(withId(R.id.b1)).perform(click());
 
-        onView(withId(R.id.CID)).perform(replaceText("lliu"));
+        onView(withId(R.id.b2)).perform(click());
 
-        onView(withId(R.id.VOTE)).perform(click());
+        onView(withId(R.id.b3)).perform(click());
 
     }
 }
