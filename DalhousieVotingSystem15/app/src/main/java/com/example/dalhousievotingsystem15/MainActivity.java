@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     public static DatabaseReference studentRef;
     public static DatabaseReference candidateRef;
     public static DatabaseReference admRef;
+    public static DatabaseReference listRef;
     public static UserInfo user;
     public static String role;
     public static boolean logout;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         studentRef=rootDatabase.child("Students");
         candidateRef=rootDatabase.child("Candidates");
         admRef=rootDatabase.child("Administer");
+        listRef=rootDatabase.child("List");
 
         logIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -190,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                 if(text!=null) {
                     if (text.equals(password)) {
                         startActivity(new Intent(MainActivity.this, Administer_LogIn.class));
-                        SaveUserIf("s",netid, password);
+                        SaveUserIf("a",netid, password);
                     } else {
                         status.setText("Incorrect Password");
                     }
@@ -222,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
 
         editor.apply();
 
-        Toast.makeText(this, "userSaved", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "userSaved", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -232,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
         String userIF=sharedPreferences.getString(TEXTS,"");
         if(userIF.contains("|")) {
             user = new UserInfo(userIF.substring(1, userIF.indexOf("|")), userIF.substring(userIF.indexOf("|") + 1, userIF.length()));
-            Toast.makeText(this, "userLoad", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "userLoad", Toast.LENGTH_SHORT).show();
             hasuserIf=true;
             role=userIF.substring(0,1);
             if (role.equals("s")){
