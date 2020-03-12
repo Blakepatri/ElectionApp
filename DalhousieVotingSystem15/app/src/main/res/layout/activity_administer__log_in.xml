@@ -6,6 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".Administer_LogIn">
 
+    <EditText
+        android:id="@+id/editmm"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="mm"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/edityy"
+        app:layout_constraintTop_toBottomOf="@+id/Welcome" />
+
+    <EditText
+        android:id="@+id/editdd"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="dd"
+        android:inputType="number|textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/setfinsihdate"
+        app:layout_constraintStart_toEndOf="@+id/editmm"
+        app:layout_constraintTop_toBottomOf="@+id/Welcome" />
+
     <Button
         android:id="@+id/CandidateControl"
         android:layout_width="147dp"
@@ -31,7 +52,6 @@
         android:layout_width="237dp"
         android:layout_height="23dp"
         android:layout_marginTop="20dp"
-        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,5 +65,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CandidateControl" />
+
+    <Button
+        android:id="@+id/setfinsihdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="set"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Welcome" />
+
+    <EditText
+        android:id="@+id/edityy"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="yy"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Welcome" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
