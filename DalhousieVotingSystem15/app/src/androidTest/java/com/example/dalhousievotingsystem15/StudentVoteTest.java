@@ -28,13 +28,13 @@ import static org.hamcrest.Matchers.allOf;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class StudentActionTest {
+public class StudentVoteTest {
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
     @Test
-    public void studentActionTest() {
+    public void studentVoteTest() {
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.NetID),
                         childAtPosition(
@@ -75,68 +75,108 @@ public class StudentActionTest {
                         isDisplayed()));
         appCompatButton.perform(click());
 
-        ViewInteraction appCompatButton2 = onView(
-                allOf(withId(R.id.vote), withText("  Vote  "),
+        ViewInteraction appCompatEditText3 = onView(
+                allOf(withId(R.id.CID),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
-                                0),
+                                3),
+                        isDisplayed()));
+        appCompatEditText3.perform(replaceText("trump"), closeSoftKeyboard());
+
+        ViewInteraction appCompatButton2 = onView(
+                allOf(withId(R.id.VOTE), withText("VOTE"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                4),
                         isDisplayed()));
         appCompatButton2.perform(click());
 
         ViewInteraction appCompatButton3 = onView(
-                allOf(withId(R.id.b1), withText("Vote"),
+                allOf(withId(R.id.VOTE), withText("VOTE"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
-                                6),
+                                4),
                         isDisplayed()));
         appCompatButton3.perform(click());
 
-        ViewInteraction appCompatButton4 = onView(
-                allOf(withId(R.id.b1), withText("Vote"),
+        ViewInteraction appCompatEditText4 = onView(
+                allOf(withId(R.id.CID),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
-                                6),
+                                3),
+                        isDisplayed()));
+        appCompatEditText4.perform(replaceText("trump"), closeSoftKeyboard());
+
+        ViewInteraction appCompatButton4 = onView(
+                allOf(withId(R.id.Cancel), withText("CancelVote"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                5),
                         isDisplayed()));
         appCompatButton4.perform(click());
 
-        ViewInteraction appCompatButton5 = onView(
-                allOf(withId(R.id.b2), withText("Vote"),
+        ViewInteraction appCompatEditText5 = onView(
+                allOf(withId(R.id.CID),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
-                                2),
+                                3),
+                        isDisplayed()));
+        appCompatEditText5.perform(replaceText("lliu"), closeSoftKeyboard());
+
+        ViewInteraction appCompatButton5 = onView(
+                allOf(withId(R.id.VOTE), withText("VOTE"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                4),
                         isDisplayed()));
         appCompatButton5.perform(click());
 
         ViewInteraction appCompatButton6 = onView(
-                allOf(withId(R.id.b2), withText("Vote"),
+                allOf(withId(R.id.VOTE), withText("VOTE"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
-                                2),
+                                4),
                         isDisplayed()));
         appCompatButton6.perform(click());
 
-        ViewInteraction appCompatButton7 = onView(
-                allOf(withId(R.id.b3), withText("Vote"),
+        ViewInteraction appCompatEditText6 = onView(
+                allOf(withId(R.id.CID),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
-                                1),
+                                3),
+                        isDisplayed()));
+        appCompatEditText6.perform(replaceText("lliu"), closeSoftKeyboard());
+
+        ViewInteraction appCompatButton7 = onView(
+                allOf(withId(R.id.Cancel), withText("CancelVote"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                5),
                         isDisplayed()));
         appCompatButton7.perform(click());
 
         ViewInteraction appCompatButton8 = onView(
-                allOf(withId(R.id.b3), withText("Vote"),
+                allOf(withId(R.id.LogOut), withText("Logout"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
@@ -144,26 +184,6 @@ public class StudentActionTest {
                                 1),
                         isDisplayed()));
         appCompatButton8.perform(click());
-
-        ViewInteraction appCompatButton9 = onView(
-                allOf(withId(R.id.back), withText("Back"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                9),
-                        isDisplayed()));
-        appCompatButton9.perform(click());
-
-        ViewInteraction appCompatButton10 = onView(
-                allOf(withId(R.id.LogOut), withText("Logout"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                2),
-                        isDisplayed()));
-        appCompatButton10.perform(click());
     }
 
     private static Matcher<View> childAtPosition(
