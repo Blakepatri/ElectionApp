@@ -2,16 +2,28 @@ package com.example.dalhousievotingsystem15;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import android.app.Notification;
+
+
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,6 +41,10 @@ public class Student_Login extends AppCompatActivity {
     private TextView invisibleid;
     private final String SHARED_PREFS="SharedPrefs";
     private final String TEXTS="text";
+    public static final String CHANNEL_1_ID = "channel1";
+    public static final String CHANNEL_2_ID = "channel2";
+    private NotificationManagerCompat notificationManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +57,10 @@ public class Student_Login extends AppCompatActivity {
         cancel=(Button)findViewById(R.id.Cancel);
         invisiblevotes=(TextView)findViewById(R.id.invisible);
         invisibleid=(TextView)findViewById(R.id.invisible2);
+        notificationManager = NotificationManagerCompat.from(this);
 
-       // invisiblevotes.setVisibility(View.GONE);
+
+        // invisiblevotes.setVisibility(View.GONE);
        //invisibleid.setVisibility(View.GONE);
 
 
@@ -68,6 +86,34 @@ public class Student_Login extends AppCompatActivity {
 
             }
         });
+
+        MainActivity.rootDatabase.child("FinishDate").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String onlinefinishdate=dataSnapshot.getValue(String.class);
+                SimpleDateFormat formatter = new SimpleDateFormat("yy/MM/dd");
+                Date date = new Date();
+                String localdate= formatter.format(date);
+                if(localdate.equals(onlinefinishdate)){
+                    infoView.append("Voting finish");
+                    //addNotification();
+                    vote.setVisibility(View.GONE);
+                    cancel.setVisibility(View.GONE);
+                    candidateID.setVisibility(View.GONE);
+                    infoView.setText("Election Finish!");
+
+                }
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
 
 
         logOut.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +142,33 @@ public class Student_Login extends AppCompatActivity {
             }
         });
         LoadCandidateList();
+    }
+
+
+    private void addNotification(){
+       // Builds your notification
+        /*
+        NotificationCompat.Builder builder = (NotificationCompat.Builder)new NotificationCompat.Builder(this)
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setContentTitle("John's Android Studio Tutorials")
+                .setContentText("this is a test");
+
+        builder.notify();
+
+         */
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setContentTitle("Test title")
+                .setContentText("this is a test")
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+        notificationManager.notify(1, notification);
+
+
+
     }
 
 
